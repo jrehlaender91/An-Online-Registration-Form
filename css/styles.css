@@ -2,6 +2,11 @@
     GLOBAL
 ************/
 
+body {
+    box-sizing: border-box;  
+    background-color: aliceblue;
+}
+
 h1 {
     text-transform: uppercase;
     margin: 0;
@@ -12,25 +17,30 @@ h1 {
 }
 
 h2 {
-    margin: 0;
     font-family: "Inria Sans", sans-serif;
     font-weight: 700;
     font-style: normal;
+    margin: 2rem auto .25rem;
 }
 
 header {
     width: 100%;
     text-align: center;
-    background-color: navy;
-    padding: 15px 0;
+    background-color: darkslategray;
+    padding: 1rem 0;
 }
 
 fieldset {
     border: none;
+    padding: 0;
+}
+
+p {
+    margin: auto;
 }
 
 legend {
-    margin:0 auto;
+    margin: 2rem 0 1.5rem;
 }
 
 form, p {
@@ -39,8 +49,66 @@ form, p {
     font-style: normal;
 }
 
+fieldset {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+input, select, label {
+    margin-bottom: .75rem;
+}
+
 input, select {
-    margin-bottom: 10px;
+    flex-basis: 100%;
+    padding: .75rem;
+    border-radius: 5px;
+    background-color: lightgray;
+    box-sizing: border-box;
+    border: none;
+    /* Idea from https://css-tricks.com/almanac/properties/t/transition/ */
+    -webkit-transition: background-color 1s ease-out;
+    -moz-transition: background-color 1s ease-out;
+    -o-transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out;
+}
+
+label {
+    flex-basis: 100%;
+    align-items: center;
+    display: flex;
+}
+
+textarea {
+    margin: 0 0 1.5rem;
+    resize: none;
+    flex-basis: 0;
+    padding: .75rem;
+    border-radius: 5px;
+    background-color: lightgray;
+    box-sizing: border-box;
+    border: none;
+}
+
+button {
+    flex-basis: 100%;
+    padding: 1.5rem;
+    border-radius: 5px;
+    background-color: darkseagreen;
+    box-sizing: border-box;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkslategray;
+}
+
+footer {
+    text-align: center;
 }
 
 
@@ -50,13 +118,14 @@ input, select {
 
 .container {
     margin: auto;
-    margin-top: 20px;
+    margin-top: 1,5rem;
     width: 100%;
-    max-width: 40%;
+    max-width: 90%;
     display: flex;
     flex-direction: column;
     text-align: left;
-    background-color: aqua;
+    background-color: white;
+    padding: 0 2rem;
 }
 
 .title {
@@ -66,6 +135,122 @@ input, select {
     font-size: 1.25rem;
 }
 
+hr {
+    border: solid;
+    border-width: 1px;
+    width: 100%;
+    color: black;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.thicker {
+    border: solid;
+    border-width: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 1.5rem 0 .25rem;
+}
+
+#zipcode {
+    flex-basis: 25%;
+  }
+
+#mid {
+    margin: 2.5rem 0 calc(2.5rem - 2rem);
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: 2px solid darkslategrey;
+    box-sizing: border-box;
+    background-color:ivory;
+}
+
+input[type="checkbox"]:focus, input[type="radio"]:focus {
+    outline: none;
+}
+  
+  ::placeholder {
+    color: grey;
+    font-style: italic;
+  }
+
+  select {
+    color: gray;
+  }
+
+ .newsletter input  {
+    flex-basis: 0;
+    padding: .75rem;
+    border-radius: 5px;
+    background-color: lightgray;
+    box-sizing: border-box;
+    border: none;
+    margin-right: .5rem;
+}
+
+input + label {
+    flex-basis: calc(100% - 22px);
+    align-items: center;
+    display: flex;
+    margin-bottom: .25rem;
+}
+
+.newsletter p:first-of-type, textarea, .instruction {
+    flex-basis: 100%;
+}
+
+.newsletter label:first-of-type {
+   margin-top: 0;
+}
+
+.instruction {
+    margin: 1.5rem 0 .5rem;
+}
+
+.newsletter input {
+    margin-bottom: initial;
+}
+
+footer {
+    margin: 2rem 0 1rem;
+}
+
+footer p{
+    font-size: 1rem;
+    font-style: italic;
+}
+
 /************ 
 MEDIA QUERIES
 ************/
+
+/* For screens over 768 pixels */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 60%;
+        text-align: left;
+    }
+    input, select {
+        flex-basis: 70%;
+    }
+    
+    label {
+        flex-basis: calc(30% - 10px);
+    }
+}
+
+/* For screens over 1200 pixels */
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 40%;
+        text-align: left;
+    }
+    input, select {
+        flex-basis: 70%;
+    }
+    
+    label {
+        flex-basis: calc(30% - 10px);
+    }
+}
