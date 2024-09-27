@@ -22,6 +22,7 @@ h2 {
     font-style: normal;
     margin: 2rem auto .25rem;
     text-align: center;
+    font-size: 1.25rem;
 }
 
 header {
@@ -125,7 +126,7 @@ footer {
     flex-direction: column;
     text-align: left;
     background-color: white;
-    padding: 0 2rem;
+    padding: 0 .75rem;
     box-sizing: border-box;
 }
 
@@ -253,6 +254,9 @@ MEDIA QUERIES
     #zipcode {
         max-width: 25%;
       }
+      h2 {
+        font-size: 1.5rem;
+    }
 }
 
 /* For screens over 1200 pixels */
