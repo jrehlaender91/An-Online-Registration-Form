@@ -21,6 +21,7 @@ h2 {
     font-weight: 700;
     font-style: normal;
     margin: 2rem auto .25rem;
+    text-align: center;
 }
 
 header {
@@ -118,7 +119,6 @@ footer {
 
 .container {
     margin: auto;
-    margin-top: 1,5rem;
     width: 100%;
     max-width: 90%;
     display: flex;
@@ -126,6 +126,7 @@ footer {
     text-align: left;
     background-color: white;
     padding: 0 2rem;
+    box-sizing: border-box;
 }
 
 .title {
@@ -133,6 +134,10 @@ footer {
     font-weight: 500;
     font-style: normal;
     font-size: 1.25rem;
+}
+
+.intro {
+    text-align: center;
 }
 
 hr {
@@ -152,9 +157,6 @@ hr {
     margin: 1.5rem 0 .25rem;
 }
 
-#zipcode {
-    flex-basis: 25%;
-  }
 
 #mid {
     margin: 2.5rem 0 calc(2.5rem - 2rem);
@@ -189,6 +191,10 @@ input[type="checkbox"]:focus, input[type="radio"]:focus {
     margin-right: .5rem;
 }
 
+#zipcode {
+    max-width: 50%;
+  }
+
 input + label {
     flex-basis: calc(100% - 22px);
     align-items: center;
@@ -204,6 +210,10 @@ input + label {
    margin-top: 0;
 }
 
+.newsletter legend:last-of-type {
+    margin-bottom: 0;
+ }
+
 .instruction {
     margin: 1.5rem 0 .5rem;
 }
@@ -216,7 +226,7 @@ footer {
     margin: 2rem 0 1rem;
 }
 
-footer p{
+footer p {
     font-size: 1rem;
     font-style: italic;
 }
@@ -230,6 +240,7 @@ MEDIA QUERIES
     .container {
         max-width: 60%;
         text-align: left;
+        padding: 0 2rem;
     }
     input, select {
         flex-basis: 70%;
@@ -238,6 +249,9 @@ MEDIA QUERIES
     label {
         flex-basis: calc(30% - 10px);
     }
+    #zipcode {
+        max-width: 25%;
+      }
 }
 
 /* For screens over 1200 pixels */
