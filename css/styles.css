@@ -175,6 +175,7 @@ input[type="checkbox"]:focus, input[type="radio"]:focus {
   ::placeholder {
     color: grey;
     font-style: italic;
+    text-align: right;
   }
 
   select {
